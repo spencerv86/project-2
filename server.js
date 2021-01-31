@@ -4,10 +4,13 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const garmentsController = require("./controllers/garmentsController");
 const outfitsController = require("./controllers/outfitsController");
+const closetsController = require("./controllers/closetsController");
+
 
 app.use(express.static("public"));
 app.use(garmentsController);
 app.use(outfitsController);
+app.use(closetsController);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
