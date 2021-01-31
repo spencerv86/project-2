@@ -1,3 +1,23 @@
-h1 {
-  font-size: 50px;
+@font-face {
+  font-family: "Trajan Pro";
+  src: url("fonts/Trajan-Pro-Regular.eot"),
+    url("fonts/Trajan-Pro-Regular.eot?#iefix") format("embedded-opentype"),
+    url("fonts/Trajan-Pro-Regular.woff2") format("woff2"),
+    url("fonts/Trajan-Pro-Regular.woff") format("woff"),
+    url("fonts/Trajan-Pro-Regular.ttf") format("truetype"),
+    url("fonts/Trajan-Pro-Regular.svg#Trajan Pro") format("svg");
+}
+
+body {
+  background-image: url("../images/backgroundImg.jpg");
+  height: 100vh;
+  background-position: 0px -300px;
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+}
+.main-container {
+  height: 100vh;
+}
+.fire-word {
+  color: red;
 }

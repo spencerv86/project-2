@@ -4,12 +4,12 @@ const ClosetController = require("./controllers/closetController");
 const GarmentsController = require("./controllers/garmentsController");
 
 const PORT = process.env.PORT || 8080;
-
 const app = express();
+const garmentsController = require("./controllers/garmentsController")
 
 
 app.use(express.static("public"));
-
+app.use(garmentsController);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 })
 app.use("/garments", GarmentsController);
 app.use("/closet", ClosetController);
+
 
 
 app.listen(PORT, function () {
