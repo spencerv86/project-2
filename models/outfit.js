@@ -6,5 +6,12 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
+  Outfit.associate = function (models) {
+    Outfit.belongsTo(models.Closet, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
 
+  };
 };
