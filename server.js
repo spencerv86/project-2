@@ -5,11 +5,13 @@ const GarmentsController = require("./controllers/garmentsController");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-const garmentsController = require("./controllers/garmentsController")
+const garmentsController = require("./controllers/garmentsController");
+const outfitsController = require("./controllers/outfitsController");
 
 
 app.use(express.static("public"));
 app.use(garmentsController);
+app.use(outfitsController);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
