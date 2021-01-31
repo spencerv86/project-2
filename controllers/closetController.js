@@ -5,7 +5,7 @@ const db = require("../models");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render("closet");
+    res.render("view-closet");
 })
 
 
