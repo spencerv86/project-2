@@ -11,6 +11,8 @@ const garmentsController = require("./controllers/garmentsController");
 const outfitsController = require("./controllers/outfitsController");
 const closetsController = require("./controllers/closetsController");
 
+const db = require("./models")
+
 app.use(express.static("public"));
 app.use(garmentsController);
 app.use(outfitsController);
@@ -50,4 +52,9 @@ db.sequelize
     console.log(err);
   });
 
+db.sequelize.sync({force: true}).then(() => {
+  app.listen(PORT, function () {
+    console.log("Server listening on: http://localhost:" + PORT);
+  });
+})
 

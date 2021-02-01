@@ -1,0 +1,158 @@
+
+{{>nav-bar}}
+<main class="container">
+  <section class="column">
+    <h1 class="title is-1 has-text-centered">View your outfits</h1>
+  </section>
+  <div class="box garmentsContainer">
+    <div class="columns">
+      <div class="column">
+        <div class="notification is-$grey-light">
+          <h1 class="title is-2 has-text-centered strong has-text-weight-bold">
+            Outfits View
+          </h1>
+          <div class="tile is-ancestor">
+            <div class="tile is-vertical is-5 is-parent">
+              <div class="tile is-child box is-vertical">
+                <div class="tabs is-boxed">
+                  <ul>
+                    <li class="is-active"><a>All</a></li>
+                    <li>
+                      <a>
+                        <span class="icon is-small"
+                          ><i class="fas fa-hat-cowboy" aria-hidden="true"></i
+                        ></span>
+                        <span>Hats</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="icon is-small">
+                          <i class="fas fa-tshirt" aria-hidden="true"></i>
+                        </span>
+                        <span>Shirts</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="icon is-small">
+                          <i
+                            class="fas fa-drumstick-bite"
+                            aria-hidden="true"
+                          ></i>
+                        </span>
+                        <span>Pants</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="icon is-small">
+                          <i class="fas fa-shoe-prints" aria-hidden="true"></i>
+                        </span>
+                        <span>Shoes</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="icon is-small">
+                          <i class="fas fa-user-secret" aria-hidden="true"></i>
+                        </span>
+                        <span>Outerwear</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <a class="panel-block">
+                  Braves Snapback Hat
+                  <p class="icons">
+                    <span class="panel-icon add-icon">
+                      <i class="fas fa-plus" aria-hidden="true"></i>
+                    </span>
+                    <span class="panel-icon trash-icon">
+                      <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                    </span>
+                  </p>
+                </a>
+                <a class="panel-block">
+                  {{!-- will be a shirt partial --}} Baseball Tee
+                  <span class="panel-icon add-icon">
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                  </span>
+                  <span class="panel-icon">
+                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="panel-block">
+                  {{! Will be an outerwear partial}} Leather Jacket
+                  <span class="panel-icon add-icon">
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                  </span>
+                  <span class="panel-icon">
+                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  </span>
+                </a>
+
+                <a class="panel-block">
+                  {{!-- will be a shoes partial --}} Converse Hi-tops
+                  <span class="panel-icon add-icon">
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                  </span>
+                  <span class="panel-icon">
+                    <i class="fas fa-trash-alt" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="tile is-parent">
+              <div class="tile is-child box" id="">
+                <p class="title new-outfit">New Outfit #8</p>
+                <div class="tile is-child is-vertical">
+                  <div class="tile is-child box garment">
+                    <h3>MY FAV HAT</h3>
+                  </div>
+                </div>
+                <div class="tile is-child is-vertical">
+                  <div class="tile is-child box garment">
+                    <h3>THE BEST KICKS</h3>
+                  </div>
+                </div>
+                <div class="tile is-child is-vertical">
+                  <div class="tile is-child box garment">
+                    <h1>A KICKASS SHIRT</h1>
+                  </div>
+                </div>
+                <div class="tile is-child is-vertical">
+                  <div class="tile is-child box garment">
+                    <h1>MY COOLEST BLACK JEANS</h1>
+                  </div>
+                </div>
+                <div class="tile is-child is-vertical">
+                  <div class="tile is-child box garment">
+                    <h2>A SUPER HIP LEATHER JACKET</h2>
+                  </div>
+                </div>
+                <div class="buttons are-large outfit-buttons">
+                  <input
+                    class="button"
+                    type="submit"
+                    value="Save this outfit!"
+                  />
+                  <input
+                    class="button"
+                    type="reset"
+                    value="Put these clothes back"
+                  />
+                  <button class="button is-link">View All Outfits</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="/assets/js/view-outfits.js" async defer></script>
+
