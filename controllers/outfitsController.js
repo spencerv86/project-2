@@ -90,7 +90,7 @@ router.put("/api/outfits/:id", (req, res) => {
 /**
  * API Route to delete a garment by ID
  */
-router.delete("/api/outfit/:id", (req, res) => {
+router.delete("/api/outfits/:id", (req, res) => {
 //   db.Outfit.delete({
 //     where: {
 //       id: req.params.id,

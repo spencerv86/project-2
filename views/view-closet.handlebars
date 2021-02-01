@@ -1,19 +1,43 @@
 {{>nav-bar}}
 <main class="contianer">
     <section class="column">
-        <h1 class="title is-1">Closet</h1>
+        <h1 class="title is-1 has-text-centered">Closet</h1>
     </section>
     <section class="columns">
         <div class="column">
-            <span class="title is-4">
+            <h1 class="title is-5 has-text-centered">
                 Graments
-            </span>
-            <div class="column">
-                {{!-- garment goes here --}}
-            </div>
-        </div>
-        <div class="column">
+            </h1>
 
         </div>
+        <div class="column">
+            <h1 class="title is-5 has-text-centered">
+                Graments View
+            </h1>
+
+            {{!-- garment goes here --}}
+            <div class="columns">
+
+                <div class="column">
+                    <img style="width: 100px; height:100px;" src="../public/assets/images/shoe.jpg" alt="">
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <button class="button is-rounded">
+                                Edit
+                            </button>
+                        </p>
+                        <p class="control">
+                            <button class="button is-rounded">
+                                Delete
+                            </button>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
     </section>
+
 </main>
