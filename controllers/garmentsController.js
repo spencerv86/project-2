@@ -6,7 +6,7 @@ const router = express.Router();
  * Route to render all garments to a page.
  */
 router.get("/garments", function (req, res) {
-    res.send("Render all garments");
+    res.render("add-garments");
     //   db.Garment.findAll()
     //     .then((allGarments) => {
 
