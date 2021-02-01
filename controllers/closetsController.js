@@ -63,7 +63,6 @@ router.get("/closets/:id", (req, res) => {
  * API Route to create a new closet.
  */
 router.post("/api/closets", (req, res) => {
-
   //   db.Closet.create(req.body)
   //     .then((createdCloset) => {
   //       res.json(createdCloset);

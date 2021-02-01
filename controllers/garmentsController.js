@@ -7,10 +7,12 @@ const router = express.Router();
  */
 router.get("/garments", function (req, res) {
 
+    res.render("add-garments");
     //   db.Garment.findAll()
     //     .then((allGarments) => {
 
-    //        res.render("all-garments", { garments: allGarments });
+    //     //    res.render("all-garments", { garments: allGarments });
+    //     res.render("all-garments");
     //     })
     //     .catch((err) => {
     //       console.log(err);
