@@ -6,22 +6,35 @@ const router = express.Router();
  * Route to render all closets to a page.
  */
 router.get("/closets", function (req, res) {
+  db.Garment.findAll()
+    .then((allGarments) => {
 
-
-  db.Closet.findAll()
-    .then((allClosets) => {
-
-      console.log(allClosets);
-
-
-      res.render("view-closet", { closet: allClosets });
-
+      res.render("view-closet", { garments: allGarments });
     })
     .catch((err) => {
       console.log(err);
-      //TODO: render 404 page if we're unable to return closets
+      //TODO: render 404 page if we're unable to return garments
       res.status(500).end();
     });
+
+
+
+});
+
+router.get("/api/closets", function (req, res) {
+  db.Garment.findAll()
+    .then((allGarments) => {
+      console.log(allGarments)
+      res.json(allGarments);
+    })
+    .catch((err) => {
+      console.log(err);
+      //TODO: render 404 page if we're unable to return garments
+      res.status(500).end();
+    });
+
+
+
 });
 
 /**
