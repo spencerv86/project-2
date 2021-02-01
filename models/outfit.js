@@ -18,4 +18,5 @@ module.exports = function (sequelize, DataTypes) {
     Outfit.hasOne(models.Garment, { as: "Shoe", foreignKey: 'shoe_id'});
     Outfit.hasOne(models.Garment, { as: "Outer", foreignKey: 'outer_id'});
   };
+  return Outfit;
 };
