@@ -6,12 +6,15 @@ const router = express.Router();
  * Route to render all closets to a page.
  */
 router.get("/closets", function (req, res) {
-  console.log(db.Closet)
+
 
   db.Closet.findAll()
     .then((allClosets) => {
-      console.log(allClosets)
-      res.render("view-closet", { closets: allClosets });
+
+      console.log(allClosets);
+
+
+      res.render("view-closet", { closet: allClosets });
 
     })
     .catch((err) => {

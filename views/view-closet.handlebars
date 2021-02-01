@@ -4,16 +4,9 @@
         <h1 class="title is-1 has-text-centered">Closet</h1>
     </section>
     <section class="columns">
-        <div class="column">
-            <h1 class="title is-5 has-text-centered">
-                Garments
-            </h1>
 
-        </div>
-        <div class="column">
-            <h1 class="title is-5 has-text-centered">
-                Garments View
-            </h1>
+        <div class="column is-6">
+
 
             {{!-- garment goes here --}}
 
@@ -23,14 +16,14 @@
                 </p>
                 <p class="panel-tabs">
                     <a class="garment-view">All</a>
-                    <a class="garment-view">Tops</a>
-                    <a class="garment-view">Bottoms</a>
-                    <a class="garment-view">Shoes</a>
-                    <a class="garment-view">Hats</a>
+                    {{#each closet}}
+                <h1>{{closet_name}}</h1>
+                {{/each}}
                 </p>
 
 
             </article>
+
             {{!-- <div class="columns is-multiline">
 
                 <div class="column  is-6 is-flex is-flex-direction-column is-align-items-center">
