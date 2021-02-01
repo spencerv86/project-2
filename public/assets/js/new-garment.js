@@ -19,6 +19,15 @@ $(document).ready(function () {
       !newGarment.garmentSize
     ) {
       alert("Please complete all fields!");
+    } else {
+      $.ajax({
+        url: "/api/garments",
+        method: "POST",
+        data: newGarment,
+      }).then((response) => {
+        console.log(response);
+        window.location.href = "/garments";
+      });
     }
   });
 });
