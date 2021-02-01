@@ -8,8 +8,6 @@ const garmentsController = require("./controllers/garmentsController");
 const outfitsController = require("./controllers/outfitsController");
 const closetsController = require("./controllers/closetsController");
 
-
-
 app.use(express.static("public"));
 app.use(garmentsController);
 app.use(outfitsController);

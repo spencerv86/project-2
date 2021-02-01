@@ -7,6 +7,7 @@ const router = express.Router();
  */
 router.get("/closets", function (req, res) {
   res.render("view-closet");
+
   //   db.Closet.findAll()
   //     .then((allClosets) => {
 
@@ -91,18 +92,18 @@ router.put("/api/closets/:id", (req, res) => {
  * API Route to delete a closet by ID
  */
 router.delete("/api/closets/:id", (req, res) => {
-  //   db.Closet.delete({
-  //     where: {
-  //       id: req.params.id,
-  //     },
-  //   })
-  //     .then((result) => {
-  //       res.json(result);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       res.status(404).end();
-  //     });
+//   db.Closet.delete({
+//     where: {
+//       id: req.params.id,
+//     },
+//   })
+//     .then((result) => {
+//       res.json(result);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.status(404).end();
+//     });
 });
 
 module.exports = router;
