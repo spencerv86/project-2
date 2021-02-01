@@ -1,25 +1,19 @@
 $(document).ready(function () {
-    const btn = $(".garment-view").on("click", (e) => {
-        const targetedBtn = e.target.text;
-        console.log(targetedBtn)
-        switch (targetedBtn) {
-            case "All":
-                viewAll();
-                break;
-            case "Top":
-                viewTops();
-                break;
-            case "Bottoms":
-                viewBottoms();
-                break;
-            case "Shoes":
-                viewShoes();
-                break;
-            case "Hats":
-                viewHats();
-                break;
+    const btn = $(".garment-view").on("click", function () {
+        const type = $(this).data("name");
+        console.log(type)
 
-        }
+        $.get("/garments/" + type, (data) => {
+            console.log("hello");
+            if (type == undefined) {
+                window.location.href = "/closets/"
+            } else {
+                window.location.href = "/garments/" + type
+            }
+
+        })
+
+
 
 
     })

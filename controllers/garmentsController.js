@@ -21,11 +21,15 @@ router.get("/closets", function (req, res) {
         });
 });
 
-router.get("/api/closets", function (req, res) {
-    db.Garment.findAll()
+router.get("/garments/:name", function (req, res) {
+    db.Garment.findAll({
+        where: {
+            type: req.params.name
+        }
+    })
         .then((allGarments) => {
             console.log(allGarments)
-            res.json(allGarments);
+            res.render("view-closet", { garments: allGarments })
         })
         .catch((err) => {
             console.log(err);
