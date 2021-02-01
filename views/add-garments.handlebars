@@ -1,0 +1,71 @@
+{{>nav-bar}}
+<main class="container">
+  <section class="column">
+    <h1 class="title is-1 has-text-centered">Add a garment to your closet</h1>
+  </section>
+  <div class="box garmentsContainer">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="notification is-$grey-light">
+          <div class="field">
+            <label class="label">Type of garment</label>
+            <div class="control">
+              <div class="select">
+                <select id="garmentType">
+                  <option>Select garment type</option>
+                  {{!! inject sql values in here}}
+                  <option>Shirt</option>
+                  <option>Pants</option>
+                  <option>Hats</option>
+                  <option>Shoes</option>
+                  <option>Outerwear</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Garment Name</label>
+            <div class="control">
+              <input
+                id="garmentName"
+                class="input"
+                type="text"
+                placeholder="Oree NYC Leather Jacket"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Garment Color</label>
+            <div class="control">
+              <input
+                id="garmentColor"
+                class="input"
+                type="text"
+                placeholder="Black"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Garment Size</label>
+            <div class="control">
+              <input
+                id="garmentSize"
+                class="input"
+                type="text"
+                placeholder="XL"
+              />
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" id="addGarment">
+                Add To Closet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main> 

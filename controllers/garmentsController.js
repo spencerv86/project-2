@@ -6,7 +6,7 @@ const router = express.Router();
  * Route to render all garments to a page.
  */
 router.get("/garments", function (req, res) {
-    res.send("Render all garments");
+    res.render("add-garments");
     //   db.Garment.findAll()
     //     .then((allGarments) => {
 
@@ -58,6 +58,8 @@ router.get("/garments/:id", (req, res) => {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
+
+    res.send("Create a new garment")
 
     //   db.Garment.create(req.body)
     //     .then((createdGarment) => {
