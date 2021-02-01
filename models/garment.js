@@ -15,13 +15,12 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  Garment.associate = function(models) {
-      Garment.belongsTo(models.Closet, {
-          foreignKey: {
-              allowNull: false
-          }
-      })
+  Garment.associate = function (models) {
+    Garment.belongsTo(models.Closet, {
+      foreignKey: {
+        allowNull: false
+      }
+    })
   }
-
   return Garment;
 };

@@ -1,11 +1,12 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+
+
 const PORT = process.env.PORT || 8080;
 const app = express();
 const garmentsController = require("./controllers/garmentsController");
 const outfitsController = require("./controllers/outfitsController");
 const closetsController = require("./controllers/closetsController");
-
 
 app.use(express.static("public"));
 app.use(garmentsController);
@@ -16,6 +17,16 @@ app.use(express.json());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+app.get("/", (req, res) => {
+  res.render("index")
+})
+app.use("/garments", garmentsController);
+app.use("/closet", closetsController);
+app.use("/outfits", outfitsController);
+
+
+
 
 app.listen(PORT, function () {
   console.log("Server listening on: http://localhost:" + PORT);

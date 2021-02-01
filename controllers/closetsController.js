@@ -6,7 +6,8 @@ const router = express.Router();
  * Route to render all closets to a page.
  */
 router.get("/closets", function (req, res) {
-  res.send("Render all closets");
+  res.render("view-closet");
+
   //   db.Closet.findAll()
   //     .then((allClosets) => {
 

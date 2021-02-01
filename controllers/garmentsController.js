@@ -6,17 +6,17 @@ const router = express.Router();
  * Route to render all garments to a page.
  */
 router.get("/garments", function (req, res) {
-  res.send("Render all garments");
-  //   db.Garment.findAll()
-  //     .then((allGarments) => {
+    res.send("Render all garments");
+    //   db.Garment.findAll()
+    //     .then((allGarments) => {
 
-  //        res.render("all-garments", { garments: allGarments });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       //TODO: render 404 page if we're unable to return garments
-  //       res.status(500).end();
-  //     });
+    //        res.render("all-garments", { garments: allGarments });
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       //TODO: render 404 page if we're unable to return garments
+    //       res.status(500).end();
+    //     });
 });
 
 /**
@@ -24,34 +24,34 @@ router.get("/garments", function (req, res) {
  * Render the garment data to a pre-populate form.
  */
 router.get("/garments/:id/edit", (req, res) => {
-  res.send("Pulls garment data from the form");
+    res.send("Pulls garment data from the form");
 
-  //   db.Garment.findOne({ where: { id: req.params.id } })
-  //     .then((singleGarment) => {
-  //       res.render("edit-garment", singleGarment.dataValues);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       res.status(404).end();
-  //     });
+    //   db.Garment.findOne({ where: { id: req.params.id } })
+    //     .then((singleGarment) => {
+    //       res.render("edit-garment", singleGarment.dataValues);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       res.status(404).end();
+    //     });
 });
 
 /**
  * Display information about a single garment
  */
 router.get("/garments/:id", (req, res) => {
-  res.send("Returns single garment");
+    res.send("Returns single garment");
 
-  //   db.Garment.findOne({
-  //     where: { id: req.params.id },
-  //   })
-  //     .then((singleGarment) => {
-  //       // console.log(singleGarment.dataValues);
-  //       res.render("single-garment", singleGarment.dataValues);
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).end();
-  //     });
+    //   db.Garment.findOne({
+    //     where: { id: req.params.id },
+    //   })
+    //     .then((singleGarment) => {
+    //       // console.log(singleGarment.dataValues);
+    //       res.render("single-garment", singleGarment.dataValues);
+    //     })
+    //     .catch((err) => {
+    //       res.status(500).end();
+    //     });
 });
 
 /**
@@ -59,32 +59,32 @@ router.get("/garments/:id", (req, res) => {
  */
 router.post("/api/garments", (req, res) => {
 
-  //   db.Garment.create(req.body)
-  //     .then((createdGarment) => {
-  //       res.json(createdGarment);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       res.status(500).end();
-  //     });
+    //   db.Garment.create(req.body)
+    //     .then((createdGarment) => {
+    //       res.json(createdGarment);
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       res.status(500).end();
+    //     });
 });
 
 /**
  * API Route to update an existing garment by ID
  */
 router.put("/api/garments/:id", (req, res) => {
-  db.Garment.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((result) => {
-      res.json(result);
+    db.Garment.update(req.body, {
+        where: {
+            id: req.params.id,
+        },
     })
-    .catch((err) => {
-      console.log(err);
-      res.status(404).end();
-    });
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(404).end();
+        });
 });
 
 /**
