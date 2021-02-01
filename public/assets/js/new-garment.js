@@ -5,9 +5,9 @@ $(document).ready(function () {
 
     const newGarment = {
       garmentType: $("#garmentType").val(),
-      garmentName: $("garmentName").val(),
-      garmentColor: $("garmentColor").val(),
-      garmentSize: $("garmentSize").val(),
+      garmentName: $("#garmentName").val(),
+      garmentColor: $("#garmentColor").val(),
+      garmentSize: $("#garmentSize").val(),
     };
 
     console.log(newGarment)
