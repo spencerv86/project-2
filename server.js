@@ -40,6 +40,7 @@ app.use("/garments", garmentsController);
 app.use("/closet", closetsController);
 app.use("/outfits", outfitsController);
 
+app.use(express.static("public"));
 
 db.sequelize
   .sync()
