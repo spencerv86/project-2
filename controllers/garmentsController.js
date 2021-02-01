@@ -1,23 +1,38 @@
 const express = require("express");
-const db = require("../models/garment");
+const db = require("../models");
 const router = express.Router();
 
 /**
  * Route to render all garments to a page.
  */
-router.get("/garments", function (req, res) {
+router.get("/closets", function (req, res) {
 
-    //   db.Garment.findAll()
-    //     .then((allGarments) => {
 
-    //        res.render("all-garments", { garments: allGarments });
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       //TODO: render 404 page if we're unable to return garments
-    //       res.status(500).end();
-    //     });
+    db.Garment.findAll()
+        .then((allGarments) => {
+
+            res.render("view-closet", { garments: allGarments });
+
+        })
+        .catch((err) => {
+            console.log(err);
+            //TODO: render 404 page if we're unable to return garments
+            res.status(500).end();
+        });
 });
+
+router.get("/api/closets", function (req, res) {
+    db.Garment.findAll()
+        .then((allGarments) => {
+            console.log(allGarments)
+            res.json(allGarments);
+        })
+        .catch((err) => {
+            console.log(err);
+            //TODO: render 404 page if we're unable to return garments
+            res.status(500).end();
+        });
+})
 
 /**
  * Route to pull garment data from the database
@@ -58,17 +73,14 @@ router.get("/garments/:id", (req, res) => {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
-
-    res.send("Create a new garment")
-
-    //   db.Garment.create(req.body)
-    //     .then((createdGarment) => {
-    //       res.json(createdGarment);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(500).end();
-    //     });
+    db.Garment.create(req.body)
+        .then((createdGarment) => {
+            res.json(createdGarment);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).end();
+        });
 });
 
 /**

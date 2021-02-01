@@ -18,7 +18,7 @@ module.exports = function (sequelize, DataTypes) {
   Garment.associate = function (models) {
     Garment.belongsTo(models.Closet, {
       foreignKey: {
-        allowNull: false,
+        allowNull: true,
       },
     });
     Garment.hasOne(models.Outfit, { as: "Hat", foreignKey: 'hat_id'});
