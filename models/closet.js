@@ -3,7 +3,9 @@ module.exports = function (sequelize, DataTypes) {
     closet_name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
+  }, {
+    timestamps: false
   });
 
   Closet.associate = function (models) {
