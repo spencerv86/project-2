@@ -8,16 +8,16 @@ const router = express.Router();
 router.get("/closets", function (req, res) {
   res.render("view-closet");
 
-  //   db.Closet.findAll()
-  //     .then((allClosets) => {
+  // db.Closet.findAll()
+  //   .then((allClosets) => {
 
-  //        res.render("all-closets", { closets: allClosets });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       //TODO: render 404 page if we're unable to return closets
-  //       res.status(500).end();
-  //     });
+  //      res.render("all-closets", { closets: allClosets });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     //TODO: render 404 page if we're unable to return closets
+  //     res.status(500).end();
+  //   });
 });
 
 /**
@@ -59,7 +59,6 @@ router.get("/closets/:id", (req, res) => {
  * API Route to create a new closet.
  */
 router.post("/api/closets", (req, res) => {
-
   //   db.Closet.create(req.body)
   //     .then((createdCloset) => {
   //       res.json(createdCloset);
@@ -92,18 +91,18 @@ router.put("/api/closets/:id", (req, res) => {
  * API Route to delete a closet by ID
  */
 router.delete("/api/closets/:id", (req, res) => {
-//   db.Closet.delete({
-//     where: {
-//       id: req.params.id,
-//     },
-//   })
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(404).end();
-//     });
+  //   db.Closet.delete({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   })
+  //     .then((result) => {
+  //       res.json(result);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(404).end();
+  //     });
 });
 
 module.exports = router;
