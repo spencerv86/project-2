@@ -4,39 +4,138 @@
         <h1 class="title is-1 has-text-centered">Closet</h1>
     </section>
     <section class="columns">
-        <div class="column">
-            <h1 class="title is-5 has-text-centered">
-                Garments
-            </h1>
 
-        </div>
-        <div class="column">
-            <h1 class="title is-5 has-text-centered">
-                Garments View
-            </h1>
+        <div class="column is-6">
+
 
             {{!-- garment goes here --}}
-            <div class="columns">
 
-                <div class="column is-one-quarter is-flex is-flex-direction-column">
-                    <img style="width: 100px; height:100px;" src="/assets/images/shoe.jpg" alt="">
-                    <div class="field is-grouped">
-                        <p class="control">
-                            <button class="button is-rounded is-dark is-small">
-                                Edit
-                            </button>
-                        </p>
-                        <p class="control">
-                            <button class="button is-rounded is-small">
-                                Delete
-                            </button>
-                        </p>
+            <article class="panel is-dark">
+                <p class="panel-heading">
+                    Graments View
+                </p>
+                <p class="panel-tabs">
+                    <a class="garment-view">All</a>
+                    {{#each closet}}
+                <h1>{{closet_name}}</h1>
+                {{/each}}
+                </p>
+
+
+            </article>
+
+            {{!-- <div class="columns is-multiline">
+
+                <div class="column  is-6 is-flex is-flex-direction-column is-align-items-center">
+                    tops
+
+                    <div class="column is-flex is-flex-direction-column is-align-items-center">
+                        <img style="width: 100px; height:100px;" src="/assets/images/shoe.jpg" alt="">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-rounded is-dark is-small">
+                                    Edit
+
+                            </p>
+                            <p class="control">
+                                <button class="button is-rounded is-small">
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="column is-flex is-flex-direction-column is-align-items-center">
+                        <img style="width: 200px; height:200px;" src="/assets/images/shoe.jpg" alt="">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-rounded is-dark is-small">
+                                    Edit
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-rounded is-small">
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+
                     </div>
 
                 </div>
+                <div class="column is-6">
+                    bottom
+                    <div class="column is-flex is-flex-direction-column is-align-items-center">
+                        <img style="width: 200px; height:200px;" src="/assets/images/shoe.jpg" alt="">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-rounded is-dark is-small">
+                                    Edit
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-rounded is-small">
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="column is-6">
+                    shoes
+                    <div class="column is-flex is-flex-direction-column is-align-items-center">
+                        <img style="width: 200px; height:200px;" src="/assets/images/shoe.jpg" alt="">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-rounded is-dark is-small">
+                                    Edit
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-rounded is-small">
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="column is-6">
+                    accessories
+                    <div class="column is-flex is-flex-direction-column is-align-items-center">
+                        <img style="width: 200px; height:200px;" src="/assets/images/shoe.jpg" alt="">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <button class="button is-rounded is-dark is-small">
+                                    Edit
+                                </button>
+                            </p>
+                            <p class="control">
+                                <button class="button is-rounded is-small">
+                                    Delete
+                                </button>
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
 
-        </div>
+        </div> --}}
+        {{!-- <div class="column">
+            <h1 class="title is-5 has-text-centered">
+                Create Outfits
+            </h1>
+
+        </div> --}}
 
     </section>
 

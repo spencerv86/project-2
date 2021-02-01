@@ -1,23 +1,27 @@
 const express = require("express");
-const db = require("../models/closet");
+const db = require("../models");
 const router = express.Router();
 
 /**
  * Route to render all closets to a page.
  */
 router.get("/closets", function (req, res) {
-  res.render("view-closet");
 
-  // db.Closet.findAll()
-  //   .then((allClosets) => {
 
-  //      res.render("all-closets", { closets: allClosets });
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     //TODO: render 404 page if we're unable to return closets
-  //     res.status(500).end();
-  //   });
+  db.Closet.findAll()
+    .then((allClosets) => {
+
+      console.log(allClosets);
+
+
+      res.render("view-closet", { closet: allClosets });
+
+    })
+    .catch((err) => {
+      console.log(err);
+      //TODO: render 404 page if we're unable to return closets
+      res.status(500).end();
+    });
 });
 
 /**
