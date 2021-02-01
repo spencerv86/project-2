@@ -59,6 +59,8 @@ router.get("/garments/:id", (req, res) => {
  */
 router.post("/api/garments", (req, res) => {
 
+    res.send("Create a new garment")
+
     //   db.Garment.create(req.body)
     //     .then((createdGarment) => {
     //       res.json(createdGarment);
