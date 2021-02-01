@@ -15,15 +15,8 @@ const garmentsController = require("./controllers/garmentsController");
 const outfitsController = require("./controllers/outfitsController");
 const closetsController = require("./controllers/closetsController");
 
-app.use(express.static("public"));
-
-app.use(garmentsController);
-app.use(outfitsController);
-app.use(closetsController);
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
 
 app.engine(
   "handlebars",
@@ -33,18 +26,19 @@ app.engine(
   })
 );
 
-
-
 app.set("view engine", "handlebars");
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.render("index");
 });
-app.use("/garments", garmentsController);
-app.use("/closet", closetsController);
-app.use("/outfits", outfitsController);
+app.use(garmentsController);
+app.use(outfitsController);
+app.use(closetsController);
 
-app.use(express.static("public"));
+// app.use("/garments", garmentsController);
+// app.use("/closet", closetsController);
+// app.use("/outfits", outfitsController);
 
 // db.sequelize
 //   .sync()

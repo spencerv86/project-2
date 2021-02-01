@@ -4,19 +4,19 @@ $(document).ready(function () {
     console.log("Submitted the form");
 
     const newGarment = {
-      garmentType: $("#garmentType").val(),
-      garmentName: $("#garmentName").val(),
-      garmentColor: $("#garmentColor").val(),
-      garmentSize: $("#garmentSize").val(),
+      type: $("#garmentType").val(),
+      name: $("#garmentName").val(),
+      color: $("#garmentColor").val(),
+      size: $("#garmentSize").val(),
     };
 
     console.log(newGarment);
 
     if (
-      !newGarment.garmentType ||
-      !newGarment.garmentName ||
-      !newGarment.garmentColor ||
-      !newGarment.garmentSize
+      !newGarment.type ||
+      !newGarment.name ||
+      !newGarment.color ||
+      !newGarment.size
     ) {
       alert("Please complete all fields!");
     } else {
@@ -26,7 +26,7 @@ $(document).ready(function () {
         data: newGarment,
       }).then((response) => {
         console.log(response);
-        window.location.href = "/garments";
+        window.location.href = "/garments";  
       });
     }
   });

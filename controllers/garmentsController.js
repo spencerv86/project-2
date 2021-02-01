@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("../models/garment");
+const db = require("../models");
 const router = express.Router();
 
 /**
@@ -60,17 +60,14 @@ router.get("/garments/:id", (req, res) => {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
-
-    res.send("Create a new garment")
-
-    //   db.Garment.create(req.body)
-    //     .then((createdGarment) => {
-    //       res.json(createdGarment);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(500).end();
-    //     });
+      db.Garment.create(req.body)
+        .then((createdGarment) => {
+          res.json(createdGarment);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).end();
+        });
 });
 
 /**
