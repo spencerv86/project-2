@@ -10,6 +10,15 @@ $(document).ready(function () {
       garmentSize: $("#garmentSize").val(),
     };
 
-    console.log(newGarment)
+    console.log(newGarment);
+
+    if (
+      !newGarment.garmentType ||
+      !newGarment.garmentName ||
+      !newGarment.garmentColor ||
+      !newGarment.garmentSize
+    ) {
+      alert("Please complete all fields!");
+    }
   });
 });
