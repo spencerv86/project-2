@@ -34,12 +34,13 @@ app.engine(
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  res.render("index")
-})
+  res.render("index");
+});
 app.use("/garments", garmentsController);
 app.use("/closet", closetsController);
 app.use("/outfits", outfitsController);
 
+app.use(express.static("public"));
 
 db.sequelize
   .sync()
