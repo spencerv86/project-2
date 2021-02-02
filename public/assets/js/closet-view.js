@@ -2,15 +2,15 @@ $(document).ready(function () {
 
 
     const tileBox = $(".garment-tile");
-    const localStorageGarments = { ...localStorage };
-    const value = Object.values(localStorageGarments);
+    // const localStorageGarments = { ...localStorage };
+    // const value = Object.values(localStorageGarments);
 
-    if (localStorageGarments.length != 0) {
-        value.forEach(garment => {
-            const box = $("<div class='tile is-child box garment'>").append(`<span>${garment}</span>`);
-            tileBox.append(box);
-        });
-    }
+    // if (localStorageGarments.length != 0) {
+    //     value.forEach(garment => {
+    //         const box = $("<div class='tile is-child box garment'>").append(`<span>${garment}</span>`);
+    //         tileBox.append(box);
+    //     });
+    // }
 
     // listening to the icons to show garments
     const btn = $(".garment-view").on("click", function () {
@@ -33,11 +33,22 @@ $(document).ready(function () {
         const id = $(this).data("id");
         const name = $(this).data("name");
 
-        localStorage.setItem(id, name);
+        $.ajax({
+            url: "/api/garments/"+id,
+            method: "GET",
+        }).then((response) => {
+            console.log(response[0])
+            fillBox(response[0].type, response[0].name)
+        });
 
-
-        const box = $("<div class='tile is-child box garment'>").append(`<span>${name}</span>`);
-        tileBox.append(box);
+    function fillBox(type, name) {
+        console.log(type);
+        console.log(name)
+        let garmentType = type
+        $(`#${garmentType}-box`).empty();
+        let garmentInfo = $("<h3>").attr("data-id", `${id}`).text(name);
+        $(`#${garmentType}-box`).append(garmentInfo);
+    }
 
     })
 
