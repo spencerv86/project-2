@@ -47,16 +47,15 @@ router.get("/garments/:name", function (req, res) {
  * Render the garment data to a pre-populate form.
  */
 router.get("/garments/:id/edit", (req, res) => {
-    res.send("Pulls garment data from the form");
-
-    //   db.Garment.findOne({ where: { id: req.params.id } })
-    //     .then((singleGarment) => {
-    //       res.render("edit-garment", singleGarment.dataValues);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(404).end();
-    //     });
+      db.Garment.findOne({ where: { id: req.params.id } })
+        .then((singleGarment) => {
+          res.render("edit-garments");
+        //   , singleGarment.dataValues);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(404).end();
+        });
 });
 
 /**
