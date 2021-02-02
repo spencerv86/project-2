@@ -32,6 +32,7 @@ $(document).ready(function () {
     $(".fa-plus").on("click", function () {
         const id = $(this).data("id");
         const name = $(this).data("name");
+        console.log(id);
 
         localStorage.setItem(id, name);
 
