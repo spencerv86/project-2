@@ -10,10 +10,9 @@
           <div class="field">
             <label class="label">Type of garment</label>
             <div class="control">
-              <div class="select">
-                <select id="garmentType">
+              <div class="select" value="{{type}}">
+                <select  id="garmentType">
                   <option>Select garment type</option>
-                  {{!! inject sql values in here}}
                   <option>Shirt</option>
                   <option>Pants</option>
                   <option>Hats</option>
@@ -27,24 +26,24 @@
           <div class="field">
             <label class="label">Garment Name</label>
             <div class="control">
-              <input id="garmentName" class="input" type="text" placeholder="Oree NYC Leather Jacket" />
+              <input id="garmentName" class="input" value="{{name}}" type="text"  />
             </div>
           </div>
           <div class="field">
             <label class="label">Garment Color</label>
             <div class="control">
-              <input id="garmentColor" class="input" type="text" placeholder="Black" />
+              <input id="garmentColor" class="input"  value="{{color}}" type="text"  />
             </div>
           </div>
           <div class="field">
             <label class="label">Garment Size</label>
             <div class="control">
-              <input id="garmentSize" class="input" type="text" placeholder="XL" />
+              <input id="garmentSize" class="input" value="{{size}}" type="text"  />
             </div>
           </div>
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-link" id="addGarment">
+              <button class="button is-link" data-id={{id}} id="addGarment">
                 Add To Closet
               </button>
             </div>
@@ -55,4 +54,4 @@
   </form>
 </main>
 
-<script type="text/javascript" src="/assets/js/new-garment.js"></script>
+<script type="text/javascript" src="/assets/js/edit-garment.js"></script>
