@@ -6,17 +6,17 @@ const router = express.Router();
  * Route to render all outfits to a page.
  */
 router.get("/outfits", function (req, res) {
-  res.render("view-outfits");
-  //   db.Outfit.findAll()
-  //     .then((allOutfits) => {
 
-  //        res.render("all-outfits", { outfits: allOutfits });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       //TODO: render 404 page if we're unable to return outfits
-  //       res.status(500).end();
-  //     });
+  db.Outfit.findAll()
+    .then((allOutfits) => {
+      console.log(allOutfits);
+      res.render("view-outfits", { outfits: allOutfits });
+    })
+    .catch((err) => {
+      console.log(err);
+      //TODO: render 404 page if we're unable to return outfits
+      res.status(500).end();
+    });
 });
 
 /**
@@ -40,18 +40,19 @@ router.get("/outfits/:id/edit", (req, res) => {
  * Display information about a single outfit
  */
 router.get("/outfits/:id", (req, res) => {
-  res.send("Returns single outfit");
 
-  //   db.Outfit.findOne({
-  //     where: { id: req.params.id },
-  //   })
-  //     .then((singleOutfit) => {
-  //       // console.log(singleOutfit.dataValues);
-  //       res.render("single-outfit", singleOutfit.dataValues);
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).end();
-  //     });
+
+  db.Outfit.findAll({
+    where: { id: req.params.id },
+  })
+    .then((singleOutfit) => {
+      console.log(singleOutfit);
+      res.json(singleOutfit[0]);
+
+    })
+    .catch((err) => {
+      res.status(500).end();
+    });
 });
 
 /**

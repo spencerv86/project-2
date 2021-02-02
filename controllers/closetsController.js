@@ -57,8 +57,24 @@ router.get("/closets/:id/edit", (req, res) => {
 /**
  * Display information about a single closet
  */
-router.get("/closets/:id", (req, res) => {
-  res.send("Returns single closet");
+router.get("/closets/:type", (req, res) => {
+  // res.send("Returns single closet");
+  showType = req.params.type;
+       db.Garment.findAll({
+         where: {
+           type: showType
+         }
+       })
+        .then((allGarments) => {
+
+           res.render("all-garments", { garments: allGarments });
+        // res.render("all-garments");
+        })
+        .catch((err) => {
+          console.log(err);
+          //TODO: render 404 page if we're unable to return garments
+          res.status(500).end();
+        });
 
   //   db.Closet.findOne({
   //     where: { id: req.params.id },
