@@ -50,13 +50,21 @@
 
                 {{#each garments}}
                 <a class="panel-block">
-                    {{!-- will be a shirt partial --}} {{name}}
-                    <span class="panel-icon add-icon">
-                        <i class="fas fa-plus" aria-hidden="true" data-id={{id}} data-name={{name}}></i>
-                    </span>
-                    <span class="panel-icon">
-                        <i class="fas fa-trash-alt" aria-hidden="true" data-id={{id}} data-type={{type}}></i>
-                    </span>
+                    {{!-- will be a shirt partial --}}
+                    <div class="column">
+                        {{name}}
+                    </div>
+                    <div class="column">
+                        <span class="panel-icon add-icon is-pulled-right">
+                            <i class="fas fa-plus" aria-hidden="true" data-id={{id}} data-name={{name}}></i>
+                        </span>
+                        <span class="panel-icon is-pulled-right">
+                            <i class="fas fa-trash-alt" aria-hidden="true" data-id={{id}}></i>
+                        </span>
+                        <span class="panel-icon is-pulled-right">
+                            <i class="fas fa-user-edit" aria-hidden="true" data-id={{id}}></i>
+                        </span>
+                    </div>
                 </a>
                 {{/each}}
 
@@ -69,16 +77,16 @@
                     <p class="title new-outfit">New Outfit</p>
                     <div class="tile is-child is-vertical garment-tile">
                         <div class="tile is-child box" id="Hats-box"></div>
-                        <div class="tile is-child box" id="Shirt-box"></div>
+                        <div class="tile is-child box" id="Shirts-box"></div>
                         <div class="tile is-child box" id="Pants-box"></div>
                         <div class="tile is-child box" id="Shoes-box"></div>
                         <div class="tile is-child box" id="Outerwear-box"></div>
                         {{!-- The new outfits goes here --}}
                     </div>
                     <div class="buttons are-large outfit-buttons">
-                        <input class="button" type="submit" value="Save this outfit!" />
-                        <input class="button" type="reset" value="Put these clothes back" />
-                        <button class="button is-link">View All Outfits</button>
+                        <input class="button save-outfits" type="submit" value="Save this outfit!" />
+                        <input class="button clear-clothes" type="reset" value="Put these clothes back" />
+                        <button class="button is-link view-all-outfits">View All Outfits</button>
                     </div>
                 </div>
             </div>

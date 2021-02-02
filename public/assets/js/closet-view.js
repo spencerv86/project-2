@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  const tileBox = $(".garment-tile");
+  const saveOutfitsBtn = $(".save-outfits");
+  const clearClothesBtn = $(".clear-clothes");
+  const viewOutfitsBtn = $(".view-all-outfits");
 
   function loadLocal(type) {
     let response = JSON.parse(localStorage.getItem(type));
@@ -79,5 +81,12 @@ $(document).ready(function () {
       // Reload the page to get the updated list
       location.reload();
     });
+  });
+  //   * Listening to the edit icon.
+  //   * Redirecting to the edit garment page based on the id
+  //   */
+  $(".fa-user-edit").on("click", function () {
+    const id = $(this).data("id");
+    location.href = "/garments/" + id + "/edit";
   });
 });
