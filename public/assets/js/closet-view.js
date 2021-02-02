@@ -6,12 +6,13 @@ $(document).ready(function () {
     // console.log(response);
     if (response !== null) {
       let garmentType = response.type;
-    //   console.log(response.type);
+      //   console.log(response.type);
       $(`#${garmentType}-box`).empty();
-      let garmentInfo = $("<h3>").attr("data-id", `${response.id}`).text(response.name);
+      let garmentInfo = $("<h3>")
+        .attr("data-id", `${response.id}`)
+        .text(response.name);
       $(`#${garmentType}-box`).append(garmentInfo);
     }
-    return response;
   }
   loadLocal("Shirt");
   loadLocal("Hats");
@@ -65,10 +66,16 @@ $(document).ready(function () {
    */
   $(".fa-trash-alt").on("click", function () {
     const id = $(this).data("id");
+    const type = $(this).data("type");
+    let currentSpot = JSON.parse(localStorage.getItem(type))
     $.ajax("/api/garments/" + id, {
       type: "DELETE",
     }).then(function () {
       console.log("Garment deleted");
+      if (currentSpot.id === id){
+        localStorage.removeItem(type);
+        location.reload();
+    }
       // Reload the page to get the updated list
       location.reload();
     });
