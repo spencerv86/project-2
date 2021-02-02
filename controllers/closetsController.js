@@ -5,35 +5,37 @@ const router = express.Router();
 /**
  * Route to render all closets to a page.
  */
-router.get("/closets", function (req, res) {
-     db.Garment.findAll()
-        .then((allGarments) => {
+// router.get("/closets", function (req, res) {
+//   // db.Closet.findAll()
+//   //   .then((allGarments) => {
 
-           res.render("view-closet", { garments: allGarments });
-        // res.render("all-garments");
-        })
-        .catch((err) => {
-          console.log(err);
-          //TODO: render 404 page if we're unable to return garments
-          res.status(500).end();
-        });
-
-
-  // db.Closet.findAll()
-  //   .then((allClosets) => {
-
-  //     console.log(allClosets);
+//   //     res.render("view-closet", { garments: allGarments });
+//   //   })
+//   //   .catch((err) => {
+//   //     console.log(err);
+//   //     //TODO: render 404 page if we're unable to return garments
+//   //     res.status(500).end();
+//   //   });
 
 
-  //     res.render("view-closet", { closet: allClosets });
 
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     //TODO: render 404 page if we're unable to return closets
-  //     res.status(500).end();
-  //   });
-});
+// });
+
+// router.get("/api/closets", function (req, res) {
+//   db.Garment.findAll()
+//     .then((allGarments) => {
+//       console.log(allGarments)
+//       res.json(allGarments);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       //TODO: render 404 page if we're unable to return garments
+//       res.status(500).end();
+//     });
+
+
+
+// });
 
 /**
  * Route to pull closet data from the database
@@ -90,14 +92,14 @@ router.get("/closets/:type", (req, res) => {
  * API Route to create a new closet.
  */
 router.post("/api/closets", (req, res) => {
-    // db.Closet.create(req.body)
-    //   .then((createdCloset) => {
-    //     res.json(createdCloset);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     res.status(500).end();
-    //   });
+  // db.Closet.create(req.body)
+  //   .then((createdCloset) => {
+  //     res.json(createdCloset);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).end();
+  //   });
 });
 
 /**

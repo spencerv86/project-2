@@ -5,21 +5,42 @@ const router = express.Router();
 /**
  * Route to render all garments to a page.
  */
+
 router.get("/garments", function (req, res) {
-
     res.render("add-garments");
-    //   db.Garment.findAll()
-    //     .then((allGarments) => {
+})
 
-    //     //    res.render("all-garments", { garments: allGarments });
-    //     res.render("all-garments");
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       //TODO: render 404 page if we're unable to return garments
-    //       res.status(500).end();
-    //     });
+router.get("/closets", function (req, res) {
+
+    db.Garment.findAll()
+        .then((allGarments) => {
+            res.render("view-closet", { garments: allGarments });
+        })
+        .catch((err) => {
+            console.log(err);
+            //TODO: render 404 page if we're unable to return garments
+            res.status(500).end();
+        });
 });
+
+
+
+router.get("/garments/:name", function (req, res) {
+    db.Garment.findAll({
+        where: {
+            type: req.params.name
+        }
+    })
+        .then((allGarments) => {
+            console.log(allGarments)
+            res.render("view-closet", { garments: allGarments })
+        })
+        .catch((err) => {
+            console.log(err);
+            //TODO: render 404 page if we're unable to return garments
+            res.status(500).end();
+        });
+})
 
 /**
  * Route to pull garment data from the database
@@ -60,13 +81,13 @@ router.get("/garments/:id", (req, res) => {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
-      db.Garment.create(req.body)
+    db.Garment.create(req.body)
         .then((createdGarment) => {
-          res.json(createdGarment);
+            res.json(createdGarment);
         })
         .catch((err) => {
-          console.log(err);
-          res.status(500).end();
+            console.log(err);
+            res.status(500).end();
         });
 });
 
@@ -92,18 +113,18 @@ router.put("/api/garments/:id", (req, res) => {
  * API Route to delete a garment by ID
  */
 router.delete("/api/garments/:id", (req, res) => {
-    //   db.Garment.delete({
-    //     where: {
-    //       id: req.params.id,
-    //     },
-    //   })
-    //     .then((result) => {
-    //       res.json(result);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(404).end();
-    //     });
+    db.Garment.destroy({
+        where: {
+            id: req.params.id,
+        },
+    })
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(404).end();
+        });
 });
 
 module.exports = router;
