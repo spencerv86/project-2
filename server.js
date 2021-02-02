@@ -52,7 +52,7 @@ app.use(closetsController);
 //   });
 
 // db.sequelize.sync({force: true}).then(() => {
-db.sequelize.sync({}).then(() => { 
+db.sequelize.sync().then(() => {
   app.listen(PORT, function () {
     console.log("Server listening on: http://localhost:" + PORT);
   });
