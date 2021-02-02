@@ -58,15 +58,16 @@ router.get("/outfits/:id", (req, res) => {
  * API Route to create a new outfit.
  */
 router.post("/api/outfits", (req, res) => {
-res.send("Route to create a new outfit")
-  //   db.Outfit.create(req.body)
-  //     .then((createdOutfit) => {
-  //       res.json(createdOutfit);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       res.status(500).end();
-  //     });
+  console.log(req.body);
+  res.send("Route to create a new outfit");
+  // db.Outfit.create(req.body)
+  //   .then((createdOutfit) => {
+  //     res.json(createdOutfit);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).end();
+  //   });
 });
 
 /**
@@ -91,18 +92,18 @@ router.put("/api/outfits/:id", (req, res) => {
  * API Route to delete a garment by ID
  */
 router.delete("/api/outfits/:id", (req, res) => {
-//   db.Outfit.delete({
-//     where: {
-//       id: req.params.id,
-//     },
-//   })
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(404).end();
-//     });
+  //   db.Outfit.delete({
+  //     where: {
+  //       id: req.params.id,
+  //     },
+  //   })
+  //     .then((result) => {
+  //       res.json(result);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       res.status(404).end();
+  //     });
 });
 
 module.exports = router;
