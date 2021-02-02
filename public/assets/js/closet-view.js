@@ -3,6 +3,8 @@ $(document).ready(function () {
   const clearClothesBtn = $(".clear-clothes");
   const viewOutfitsBtn = $(".view-all-outfits");
 
+
+
   function loadLocal(type) {
     let response = JSON.parse(localStorage.getItem(type));
     // console.log(response);
@@ -15,8 +17,10 @@ $(document).ready(function () {
         .text(response.name);
       $(`#${garmentType}-box`).append(garmentInfo);
     }
-    return response;
+
   }
+
+
   loadLocal("Shirt");
   loadLocal("Hats");
   loadLocal("Pants");
@@ -84,4 +88,46 @@ $(document).ready(function () {
     const id = $(this).data("id");
     location.href = "/garments/" + id + "/edit";
   });
+
+
+  // listening to the save button to save the outfit to the database.
+  saveOutfitsBtn.on("click", () => {
+    const outfitName = $(".outfit-name").val().trim();
+
+    // create a new outfit to be sent with the post request
+    const newOutfit = {
+      name: outfitName,
+      hat_id: JSON.parse(localStorage.getItem("Hats")) ? JSON.parse(localStorage.getItem("Hats")).id : null,
+      shirt_id: JSON.parse(localStorage.getItem("Shirts")) ? JSON.parse(localStorage.getItem("Shirts")).id : null,
+      pant_id: JSON.parse(localStorage.getItem("Pants")) ? JSON.parse(localStorage.getItem("Pants")).id : null,
+      shoe_id: JSON.parse(localStorage.getItem("Shoes")) ? JSON.parse(localStorage.getItem("Shoes")).id : null,
+      outer_id: JSON.parse(localStorage.getItem("Outerwear")) ? JSON.parse(localStorage.getItem("Outerwear")).id : null
+    };
+
+    // sending the post request to create a new outfit
+    $.ajax("/api/outfits", {
+      method: "POST",
+      data: newOutfit
+    }).then((response) => {
+
+      alert(response)
+    })
+
+  })
+
+
+  // redirect the page
+  viewOutfitsBtn.on("click", () => {
+    window.location.href = "/outfits";
+  });
+
+  // clear the outfits
+  clearClothesBtn.on("click", () => {
+    localStorage.clear();
+    location.reload();
+  })
+
+  // end of document ready function
 });
+
+
