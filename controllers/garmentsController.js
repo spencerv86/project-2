@@ -21,6 +21,10 @@ router.get("/closets", function (req, res) {
         });
 });
 
+router.get("/garments", function(req, res) {
+    res.render("add-garments");
+});
+
 router.get("/garments/:name", function (req, res) {
     db.Garment.findAll({
         where: {
