@@ -26,7 +26,7 @@ $(document).ready(function () {
         data: newGarment,
       }).then((response) => {
         console.log(response);
-        window.location.href = "/garments";  
+        window.location.href = "/garments";
       });
     }
   });
