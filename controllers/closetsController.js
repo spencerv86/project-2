@@ -6,22 +6,33 @@ const router = express.Router();
  * Route to render all closets to a page.
  */
 router.get("/closets", function (req, res) {
+     db.Garment.findAll()
+        .then((allGarments) => {
+
+           res.render("view-closet", { garments: allGarments });
+        // res.render("all-garments");
+        })
+        .catch((err) => {
+          console.log(err);
+          //TODO: render 404 page if we're unable to return garments
+          res.status(500).end();
+        });
 
 
-  db.Closet.findAll()
-    .then((allClosets) => {
+  // db.Closet.findAll()
+  //   .then((allClosets) => {
 
-      console.log(allClosets);
+  //     console.log(allClosets);
 
 
-      res.render("view-closet", { closet: allClosets });
+  //     res.render("view-closet", { closet: allClosets });
 
-    })
-    .catch((err) => {
-      console.log(err);
-      //TODO: render 404 page if we're unable to return closets
-      res.status(500).end();
-    });
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     //TODO: render 404 page if we're unable to return closets
+  //     res.status(500).end();
+  //   });
 });
 
 /**
@@ -44,8 +55,24 @@ router.get("/closets/:id/edit", (req, res) => {
 /**
  * Display information about a single closet
  */
-router.get("/closets/:id", (req, res) => {
-  res.send("Returns single closet");
+router.get("/closets/:type", (req, res) => {
+  // res.send("Returns single closet");
+  showType = req.params.type;
+       db.Garment.findAll({
+         where: {
+           type: showType
+         }
+       })
+        .then((allGarments) => {
+
+           res.render("all-garments", { garments: allGarments });
+        // res.render("all-garments");
+        })
+        .catch((err) => {
+          console.log(err);
+          //TODO: render 404 page if we're unable to return garments
+          res.status(500).end();
+        });
 
   //   db.Closet.findOne({
   //     where: { id: req.params.id },
