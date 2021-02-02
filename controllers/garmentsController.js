@@ -33,6 +33,7 @@ router.get("/garments/:name", function (req, res) {
     })
         .then((allGarments) => {
             console.log(allGarments)
+        
             res.render("view-closet", { garments: allGarments })
         })
         .catch((err) => {
@@ -47,10 +48,11 @@ router.get("/garments/:name", function (req, res) {
  * Render the garment data to a pre-populate form.
  */
 router.get("/garments/:id/edit", (req, res) => {
-      db.Garment.findOne({ where: { id: req.params.id } })
-        .then((singleGarment) => {
-          res.render("edit-garments");
-        //   , singleGarment.dataValues);
+    console.log(req.params)
+      db.Garment.findOne({ where: { id: req.params.id },raw:true })
+      .then((singleGarment) => {
+            console.log(singleGarment)
+          res.render("edit-garments", singleGarment);
         })
         .catch((err) => {
           console.log(err);
