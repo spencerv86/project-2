@@ -8,7 +8,9 @@ $(document).ready(function () {
       let garmentType = response.type;
       //   console.log(response.type);
       $(`#${garmentType}-box`).empty();
-      let garmentInfo = $("<h3>").attr("data-id", `${response.id}`).text(response.name);
+      let garmentInfo = $("<h3>")
+        .attr("data-id", `${response.id}`)
+        .text(response.name);
       $(`#${garmentType}-box`).append(garmentInfo);
     }
     return response;
@@ -72,5 +74,12 @@ $(document).ready(function () {
       // Reload the page to get the updated list
       location.reload();
     });
+  });
+  //   * Listening to the edit icon.
+  //   * Redirecting to the edit garment page based on the id
+  //   */
+  $(".fa-user-edit").on("click", function () {
+    const id = $(this).data("id");
+    location.href = "/garments/" + id + "/edit";
   });
 });
