@@ -6,8 +6,6 @@
     <section class="columns">
 
         <div class="column is-6">
-
-
             {{!-- garment goes here --}}
 
             <article class="panel is-dark">
@@ -54,7 +52,7 @@
                 <a class="panel-block">
                     {{!-- will be a shirt partial --}} {{name}}
                     <span class="panel-icon add-icon">
-                        <i class="fas fa-plus" aria-hidden="true" data-id={{id}}></i>
+                        <i class="fas fa-plus" aria-hidden="true" data-id={{id}} data-name={{name}}></i>
                     </span>
                     <span class="panel-icon">
                         <i class="fas fa-trash-alt" aria-hidden="true" data-id={{id}}></i>
@@ -64,6 +62,22 @@
 
 
             </article>
+        </div>
+        <div class="column">
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <p class="title new-outfit">New Outfit</p>
+                    <div class="tile is-child is-vertical garment-tile">
+                        {{!-- The new outfits goes here --}}
+                    </div>
+                    <div class="buttons are-large outfit-buttons">
+                        <input class="button" type="submit" value="Save this outfit!" />
+                        <input class="button" type="reset" value="Put these clothes back" />
+                        <button class="button is-link">View All Outfits</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 

@@ -1,5 +1,17 @@
 $(document).ready(function () {
 
+
+    const tileBox = $(".garment-tile");
+    const localStorageGarments = { ...localStorage };
+    const value = Object.values(localStorageGarments);
+
+    if (localStorageGarments.length != 0) {
+        value.forEach(garment => {
+            const box = $("<div class='tile is-child box garment'>").append(`<span>${garment}</span>`);
+            tileBox.append(box);
+        });
+    }
+
     // listening to the icons to show garments
     const btn = $(".garment-view").on("click", function () {
         const type = $(this).data("name");
@@ -19,7 +31,14 @@ $(document).ready(function () {
     // listening to the add icon
     $(".fa-plus").on("click", function () {
         const id = $(this).data("id");
-        console.log(id);
+        const name = $(this).data("name");
+
+        localStorage.setItem(id, name);
+
+
+        const box = $("<div class='tile is-child box garment'>").append(`<span>${name}</span>`);
+        tileBox.append(box);
+
     })
 
     /**
