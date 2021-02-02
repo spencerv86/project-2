@@ -113,18 +113,18 @@ router.put("/api/garments/:id", (req, res) => {
  * API Route to delete a garment by ID
  */
 router.delete("/api/garments/:id", (req, res) => {
-    //   db.Garment.delete({
-    //     where: {
-    //       id: req.params.id,
-    //     },
-    //   })
-    //     .then((result) => {
-    //       res.json(result);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(404).end();
-    //     });
+    db.Garment.destroy({
+        where: {
+            id: req.params.id,
+        },
+    })
+        .then((result) => {
+            res.json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(404).end();
+        });
 });
 
 module.exports = router;
