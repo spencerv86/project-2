@@ -34,6 +34,10 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 72px;
 }
+#cinzelNav {
+  font-family: 'Cinzel', serif;
+  font-size: 44px;
+}
 #garamond {
   font-family: 'Cormorant Garamond', serif;
   font-size: 44px;
