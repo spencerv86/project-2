@@ -5,14 +5,16 @@ const router = express.Router();
 /**
  * Route to render all garments to a page.
  */
-router.get("/closets", function (req, res) {
 
+router.get("/garments", function (req, res) {
+    res.render("add-garments");
+})
+
+router.get("/closets", function (req, res) {
 
     db.Garment.findAll()
         .then((allGarments) => {
-
             res.render("view-closet", { garments: allGarments });
-
         })
         .catch((err) => {
             console.log(err);
