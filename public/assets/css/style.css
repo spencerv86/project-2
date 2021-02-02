@@ -30,3 +30,11 @@ body {
   text-shadow: 0px 0px 40px #39FF14, 0px 0px 40px #39FF14;
 }
 
+#cinzel {
+  font-family: 'Cinzel', serif;
+  font-size: 72px;
+}
+#garamond {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+}
