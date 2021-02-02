@@ -33,6 +33,7 @@ router.get("/garments/:name", function (req, res) {
     })
         .then((allGarments) => {
             console.log(allGarments)
+        
             res.render("view-closet", { garments: allGarments })
         })
         .catch((err) => {
@@ -47,16 +48,16 @@ router.get("/garments/:name", function (req, res) {
  * Render the garment data to a pre-populate form.
  */
 router.get("/garments/:id/edit", (req, res) => {
-    res.send("Pulls garment data from the form");
-
-    //   db.Garment.findOne({ where: { id: req.params.id } })
-    //     .then((singleGarment) => {
-    //       res.render("edit-garment", singleGarment.dataValues);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //       res.status(404).end();
-    //     });
+    console.log(req.params)
+      db.Garment.findOne({ where: { id: req.params.id },raw:true })
+      .then((singleGarment) => {
+            console.log(singleGarment)
+          res.render("edit-garments", singleGarment);
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(404).end();
+        });
 });
 
 /**

@@ -1,0 +1,57 @@
+{{>nav-bar}}
+<main class="container">
+  <section class="column">
+    <h1 class="title is-1 has-text-centered">Edit a garment in your closet</h1>
+  </section>
+  <form id="new-garment-form" class="box garmentsContainer">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="notification is-$grey-light">
+          <div class="field">
+            <label class="label">Type of garment</label>
+            <div class="control">
+              <div class="select" value="{{type}}">
+                <select  id="garmentType">
+                  <option>Select garment type</option>
+                  <option>Shirt</option>
+                  <option>Pants</option>
+                  <option>Hats</option>
+                  <option>Shoes</option>
+                  <option>Outerwear</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Garment Name</label>
+            <div class="control">
+              <input id="garmentName" class="input" value="{{name}}" type="text"  />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Garment Color</label>
+            <div class="control">
+              <input id="garmentColor" class="input"  value="{{color}}" type="text"  />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Garment Size</label>
+            <div class="control">
+              <input id="garmentSize" class="input" value="{{size}}" type="text"  />
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" data-id={{id}} id="addGarment">
+                Add To Closet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+<script type="text/javascript" src="/assets/js/edit-garment.js"></script>
