@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  const tileBox = $(".garment-tile");
+  const saveOutfitsBtn = $(".save-outfits");
+  const clearClothesBtn = $(".clear-clothes");
+  const viewOutfitsBtn = $(".view-all-outfits");
 
   function loadLocal(type) {
     let response = JSON.parse(localStorage.getItem(type));
