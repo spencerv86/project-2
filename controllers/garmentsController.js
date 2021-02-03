@@ -73,7 +73,7 @@ router.get("/garments/:id", (req, res) => {
 });
 
 router.get("/api/garments/:id", function (req, res) {
-  db.Garment.findAll({
+  db.Garment.findOne({
     where: {
       id: req.params.id,
     },
