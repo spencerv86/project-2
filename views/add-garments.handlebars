@@ -11,8 +11,8 @@
             <label class="label">Type of garment</label>
             <div class="control">
               <div class="select">
-                <select id="garmentType">
-                  <option>Select garment type</option>
+                <select name="selectOption" id="garmentType" required>
+                  <option value="">Select garment type</option>
                   {{!! inject sql values in here}}
                   <option>Shirt</option>
                   <option>Pants</option>
