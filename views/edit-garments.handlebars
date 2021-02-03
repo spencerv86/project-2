@@ -11,8 +11,8 @@
             <label class="label">Type of garment</label>
             <div class="control">
               <div class="select" value="{{type}}">
-                <select  id="garmentType">
-                  <option>Select garment type</option>
+                <select name="selectOption" id="garmentType" required>
+                  <option value="">Select garment type</option>
                   <option>Shirt</option>
                   <option>Pants</option>
                   <option>Hats</option>
@@ -26,19 +26,19 @@
           <div class="field">
             <label class="label">Garment Name</label>
             <div class="control">
-              <input id="garmentName" class="input" value="{{name}}" type="text"  />
+              <input id="garmentName" class="input" value="{{name}}" type="text" />
             </div>
           </div>
           <div class="field">
             <label class="label">Garment Color</label>
             <div class="control">
-              <input id="garmentColor" class="input"  value="{{color}}" type="text"  />
+              <input id="garmentColor" class="input" value="{{color}}" type="text" />
             </div>
           </div>
           <div class="field">
             <label class="label">Garment Size</label>
             <div class="control">
-              <input id="garmentSize" class="input" value="{{size}}" type="text"  />
+              <input id="garmentSize" class="input" value="{{size}}" type="text" />
             </div>
           </div>
           <div class="field is-grouped">
