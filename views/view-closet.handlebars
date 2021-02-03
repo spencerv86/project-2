@@ -1,100 +1,109 @@
 {{>nav-bar}}
-<main class="container">
-    <section class="column">
-        <h1 class="title is-1 has-text-centered">Closet</h1>
-    </section>
-    <section class="columns">
+<main id="garamondText" class="container">
+  <section class="column">
+    <h1 id="garamondTitle" class="title is-1 has-text-centered">Closet</h1>
+  </section>
+  <section class="columns">
+    <div class="column is-6">
+      {{!-- garment goes here --}}
 
-        <div class="column is-6">
-            {{!-- garment goes here --}}
-
-            <article class="panel is-dark">
-                <p class="panel-heading">
-                    Garments View
-                </p>
-                <p class="panel-tabs">
-                    <a class="garment-view">All</a>
-                    <a class="garment-view" data-name="Hats">
-                        <span class="icon is-small">
-                            <i class="fas fa-hat-cowboy" aria-hidden="true"></i>
-                        </span>
-                        <span>Hats</span>
-                    </a>
-                    <a class="garment-view" data-name="Shirt">
-                        <span class="icon is-small">
-                            <i class="fas fa-tshirt" aria-hidden="true"></i>
-                        </span>
-                        <span>Shirt</span>
-                    </a>
-                    <a class="garment-view" data-name="Pants">
-                        <i class="fas fa-drumstick-bite" aria-hidden="true"></i>
-                        </span>
-                        <span>Pants</span>
-                    </a>
-                    <a class="garment-view" data-name="Shoes">
-                        <span class="icon is-small">
-                            <i class="fas fa-shoe-prints" aria-hidden="true"></i>
-                        </span>
-                        <span>Shoes</span>
-                    </a>
-                    <a class="garment-view" data-name="Outerwear">
-                        <i class="fas fa-user-secret" aria-hidden="true"></i>
-                        </span>
-                        <span>Outerwear</span>
-                    </a>
+      <article class="panel is-dark">
+        <p class="panel-heading has-text-centered">Garments View</p>
+        <p class="panel-tabs">
+          <a class="garment-view">All</a>
+          <a class="garment-view" data-name="Hats">
+            <span class="icon is-small">
+              <i class="fas fa-hat-cowboy" aria-hidden="true"></i>
+            </span>
+            <span>Hats</span>
+          </a>
+          <a class="garment-view" data-name="Shirt">
+            <span class="icon is-small">
+              <i class="fas fa-tshirt" aria-hidden="true"></i>
+            </span>
+            <span>Shirt</span>
+          </a>
+          <a class="garment-view" data-name="Pants">
+            <i class="fas fa-drumstick-bite" aria-hidden="true"></i>
+            <span>Pants</span>
+          </a>
+          <a class="garment-view" data-name="Shoes">
+            <span class="icon is-small">
+              <i class="fas fa-shoe-prints" aria-hidden="true"></i>
+            </span>
+            <span>Shoes</span>
+          </a>
+          <a class="garment-view" data-name="Outerwear">
+            <i class="fas fa-user-secret" aria-hidden="true"></i>
+            <span>Outerwear</span>
+          </a>
+        </p>
 
 
-                </p>
+        {{#each garments}}
+        <a class="panel-block">
+          {{!-- will be a shirt partial --}}
+          <div class="column">{{name}}</div>
+          <div class="column">
+            <span class="panel-icon add-icon is-pulled-right">
+              <i
+                class="fas fa-plus"
+                aria-hidden="true"
+                data-id="{{id}}"
+                data-name="{{name}}"
+              ></i>
+            </span>
+            <span class="panel-icon is-pulled-right">
+              <i
+                class="fas fa-trash-alt"
+                aria-hidden="true"
+                data-id="{{id}}"
+              ></i>
+            </span>
+            <span class="panel-icon is-pulled-right">
+              <i
+                class="fas fa-user-edit"
+                aria-hidden="true"
+                data-id="{{id}}"
+              ></i>
+            </span>
+          </div>
+        </a>
+        {{/each}}
+      </article>
+    </div>
+    <div class="column">
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title new-outfit has-text-centered">New Outfit</p>
+          <div class="tile is-child is-vertical garment-tile">
+            <div class="tile is-child box" id="Hats-box"></div>
+            <div class="tile is-child box" id="Shirts-box"></div>
+            <div class="tile is-child box" id="Pants-box"></div>
+            <div class="tile is-child box" id="Shoes-box"></div>
+            <div class="tile is-child box" id="Outerwear-box"></div>
+            {{!-- The new outfits goes here --}}
+          </div>
+          <div class="buttons are-large outfit-buttons">
+            <input
+              class="button save-outfits"
+              type="submit"
+              value="Save this outfit!"
+            />
+            <input
+              class="button clear-clothes"
+              type="reset"
+              value="Put these clothes back"
+            />
+            <button class="button is-link view-all-outfits">
+              View All Outfits
+            </button>
+          </div>
 
-
-
-                {{#each garments}}
-                <a class="panel-block">
-                    {{!-- will be a shirt partial --}}
-                    <div class="column">
-                        {{name}}
-                    </div>
-                    <div class="column">
-                        <span class="panel-icon add-icon is-pulled-right">
-                            <i class="fas fa-plus" aria-hidden="true" data-id={{id}} data-name={{name}}></i>
-                        </span>
-                        <span class="panel-icon is-pulled-right">
-                            <i class="fas fa-trash-alt" aria-hidden="true" data-id={{id}}></i>
-                        </span>
-                        <span class="panel-icon is-pulled-right">
-                            <i class="fas fa-user-edit" aria-hidden="true" data-id={{id}}></i>
-                        </span>
-                    </div>
-                </a>
-                {{/each}}
-
-
-            </article>
         </div>
-        <div class="column">
-            <div class="tile is-parent">
-                <div class="tile is-child box">
-                    <p class="title new-outfit">New Outfit</p>
-                    <div class="tile is-child is-vertical garment-tile">
-                        <div class="tile is-child box" id="Hats-box"></div>
-                        <div class="tile is-child box" id="Shirt-box"></div>
-                        <div class="tile is-child box" id="Pants-box"></div>
-                        <div class="tile is-child box" id="Shoes-box"></div>
-                        <div class="tile is-child box" id="Outerwear-box"></div>
-                        {{!-- The new outfits goes here --}}
-                    </div>
-                    <div class="buttons are-large outfit-buttons">
-                        <input type="text" class="outfit-name" placeholder="Add your outfit name">
-                        <input class="button save-outfits" type="submit" value="Save this outfit!" />
-                        <input class="button clear-clothes" type="reset" value="Put these clothes back" />
-                        <button class="button is-link view-all-outfits">View All Outfits</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
+      </div>
+    </div>
+  </section>
 </main>
 
 <script src="/assets/js/closet-view.js"></script>

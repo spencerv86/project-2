@@ -30,3 +30,30 @@ body {
   text-shadow: 0px 0px 40px #39FF14, 0px 0px 40px #39FF14;
 }
 
+#cinzel {
+  font-family: 'Cinzel', serif;
+  font-size: 72px;
+}
+#cinzelNav {
+  font-family: 'Cinzel', serif;
+  font-size: 50px;
+}
+#garamond {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+}
+#garamondText {
+  font-family: 'Cormorant Garamond', serif;
+}
+#garamondHead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+}
+#garamondTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+}
+#garamondNav {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+}
