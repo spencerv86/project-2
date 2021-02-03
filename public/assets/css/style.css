@@ -32,3 +32,12 @@ body {
 ul span {
   font-size: 10px;
 }
+.outfits-container {
+  box-shadow: none;
+  padding: 1px;
+  border-radius: 0;
+}
+.outfits-container a,
+.outfits-container span {
+  font-size: 10px;
+}
