@@ -1,13 +1,6 @@
-@font-face {
-  font-family: "Trajan Pro";
-  src: url("fonts/Trajan-Pro-Regular.eot"),
-    url("fonts/Trajan-Pro-Regular.eot?#iefix") format("embedded-opentype"),
-    url("fonts/Trajan-Pro-Regular.woff2") format("woff2"),
-    url("fonts/Trajan-Pro-Regular.woff") format("woff"),
-    url("fonts/Trajan-Pro-Regular.ttf") format("truetype"),
-    url("fonts/Trajan-Pro-Regular.svg#Trajan Pro") format("svg");
+html {
+  height: 100vh;
 }
-
 body {
   background-image: url("../images/backgroundImg.jpg");
   min-height: 100vh;
@@ -36,8 +29,48 @@ ul span {
   box-shadow: none;
   padding: 1px;
   border-radius: 0;
+  font-family: "Cormorant Garamond", serif;
 }
 .outfits-container a,
 .outfits-container span {
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.outfit {
+  font-size: 14px;
+}
+
+.one-outfit-container {
+  box-shadow: none;
+}
+#cinzel {
+  font-family: "Cinzel", serif;
+  font-size: 72px;
+}
+#cinzelNav {
+  font-family: "Cinzel", serif;
+  font-size: 50px;
+}
+#garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 44px;
+}
+#garamondText {
+  font-family: "Cormorant Garamond", serif;
+}
+.garamondText {
+  font-family: "Cormorant Garamond", serif;
+}
+#garamondHead {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 44px;
+}
+#garamondTitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 50px;
+}
+#garamondNav {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
 }
