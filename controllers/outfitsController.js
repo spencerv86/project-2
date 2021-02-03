@@ -40,12 +40,15 @@ router.get("/outfits/:id/edit", (req, res) => {
  * Display information about a single outfit
  */
 router.get("/outfits/:id", (req, res) => {
-  db.Outfit.findAll({
+
+
+  db.Outfit.findOne({
     where: { id: req.params.id },
   })
     .then((singleOutfit) => {
-      console.log(singleOutfit);
-      res.json(singleOutfit[0]);
+      // console.log(singleOutfit);
+      // console.log(db.Outfit.getShirt());
+      res.json(singleOutfit);
 
     })
     .catch((err) => {
