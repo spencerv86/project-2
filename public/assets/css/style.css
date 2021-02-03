@@ -42,6 +42,17 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 44px;
 }
+#garamondText {
+  font-family: 'Cormorant Garamond', serif;
+}
+#garamondHead {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px;
+}
+#garamondTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 50px;
+}
 #garamondNav {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
