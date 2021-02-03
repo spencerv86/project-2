@@ -19,27 +19,34 @@
 [Licenses](#Licenses)
           
 # About
-This app will allow users to add garments in their closets for cataloging. Users are also able to add selected garments to outfits and then view those outfits. Our app will help users catalogue their clothes and allow them to view the entire contents of their closet
+Promethium is an app that allows users to add garments in their closets for cataloguing. After adding a garment to the database, they can then add specific garments to saved outfits that are easily accessible. Our app will help users catalogue their clothes and assist them in viewing the entire contents of their closet with ease.
+
 ## Installation
-Users will navigate to the deployed link to access the application
+
+If you would like to see the site in action, the deployed and functional site can be found on Heroku here: <https://secure-shelf-39463.herokuapp.com/>.
+
+Alternatively, if you would like to inspect the code and install locally, please begin by forking the repository and downloading to your own computer. You will need to run ```npm install``` but no other installations will be necessary. Create the database ```promethium_db``` in your mySQL server and edit the development password in your ```config.json``` file.
 ## Usage
-Users will be able to view their closets, view their created outfits, and add garments to their closets from the main page.
-## Test Instructions
-Coming soon!
-          
-          
+To use the app, visit the [deployed site on Heroku](https://secure-shelf-39463.herokuapp.com/). Once you've arrived, you can click on the ```Add Garment``` button to begin adding to your closet. Make sure you fill out all of the required inputs and then save to your closet. 
+
+Once saved, all of your garments are accessible under the ```View Closet``` button.Here, you can see all garments that you've created and sort them by type (hat, shirt, outerwear, etc.). You can also use the buttons to the side of each garment listed to edit, delete or add to an outfit. The edit button will redirect you to a separate page but don't worry, your outfit in progress will be waiting for you when you return. 
+
+Once you've chosen all of your individual garments, you can name and save your outfit and view it under the ```View Outfits``` button. This will take you to another page displaying all the outfits you've saved. Simply clicking on the desired outfit will then display all of the individual garments that you saved.
 ## Contributing
 Please reach out to one of the collaborators via Github to propose any new changes.
           
 ## Questions
-You can find Spencer on [GitHub](https://www.github.com/SpencerV86) 
-You can reach me by email also at Coming Soon!
+You can find Spencer on [GitHub](https://www.github.com/spencerv86) 
+You can reach me by email also at spencer.vaughan@gmail.com!
+
 You can find Andre on [GitHub](https://www.github.com/AndreDiop) 
 You can reach me by email also at itsjustandre@gmail.com 
-You can find Derrick on [GitHub](https://www.github.com/) 
+
+You can find Derrick on [GitHub](https://www.github.com/derrickhardison) 
 You can reach me by email also at Coming Soon!
-You can find us on [GitHub](https://www.github.com/) 
-You can reach me by email also at Coming Soon!
+
+You can find Eid on [GitHub](https://github.com/alsharifnahas) 
+You can reach me by email also at Alsharifeid@gmail.com!
 
 ## License
 This project is covered under the following 
