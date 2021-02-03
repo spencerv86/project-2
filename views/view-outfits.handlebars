@@ -20,35 +20,10 @@
                     <li class="is-active"><a>All</a></li>
                 </div>
                 {{#each outfits}}
-                <a class="panel-block  outfits-container" data-id={{id}}>
-                  <div class="column">
-                    {{name}}
-                  </div>
-                  <p class="icons">
-                    <span class="panel-icon add-icon">
-                      <i class="fas fa-eye"></i>
-                    </span>
-                  </p>
-                </a>
+                  {{> outfit-panel-block}}
                 {{/each}}
-
-
-
               </div>
             </div>
-            {{#each outfit}}
-            <a class="panel-block  outfits-container" data-id={{id}}>
-              <div class="column">
-                {{name}}
-              </div>
-              <p class="icons">
-                <span class="panel-icon add-icon">
-                  <i class="fas fa-eye"></i>
-                </span>
-              </p>
-            </a>
-            {{/each}}
-
             {{!-- edit outfits --}}
             <div class="tile is-parent one-outfit-container" style="display: none;">
               <div class="tile is-child box" id="">
