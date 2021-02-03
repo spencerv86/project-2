@@ -8,7 +8,7 @@ $(document).ready(function () {
     const id = $(this).data("id");
     $.get("/outfits/" + id, (response) => {
       oneOutfitContainer.css("display", "block");
-      outfitNamePlaceHolder.text(`The Outfit you Choose: ${response.name}`);
+      outfitNamePlaceHolder.text(`The Outfit you Chose: ${response.name}`);
       console.log(response);
 
       if (response.hat_id !== null) {
