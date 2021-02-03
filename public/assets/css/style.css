@@ -15,18 +15,20 @@ body {
   background-repeat: no-repeat;
   background-size: 100%, 100%;
 }
+
 .main-container {
   height: 100vh;
 }
 .fire-word {
   /* font: italic bold 22px Georgia, serif; */
-  color:red;
+  color: red;
   text-shadow: 0px 0px 40px #ff5e14, 0px 0px 40px #ff5e14;
-
 }
 .glow {
   font: italic bold 22px Georgia, serif;
   color: white;
-  text-shadow: 0px 0px 40px #39FF14, 0px 0px 40px #39FF14;
+  text-shadow: 0px 0px 40px #39ff14, 0px 0px 40px #39ff14;
 }
-
+ul span {
+  font-size: 10px;
+}

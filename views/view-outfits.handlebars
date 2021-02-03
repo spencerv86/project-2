@@ -12,12 +12,12 @@
           </h1>
           <div class="tile is-ancestor">
 
-
             <div class="tile is-vertical is-5 is-parent">
               <div class="tile is-child box is-vertical">
                 <div class="tabs is-boxed">
                   <ul>
                     <li class="is-active"><a>All</a></li>
+                  </ul>
                 </div>
                 {{#each outfits}}
                 <a class="panel-block  outfits-container" data-id={{id}}>
@@ -36,18 +36,7 @@
 
               </div>
             </div>
-            {{#each outfit}}
-            <a class="panel-block  outfits-container" data-id={{id}}>
-              <div class="column">
-                {{name}}
-              </div>
-              <p class="icons">
-                <span class="panel-icon add-icon">
-                  <i class="fas fa-eye"></i>
-                </span>
-              </p>
-            </a>
-            {{/each}}
+
 
             {{!-- edit outfits --}}
             <div class="tile is-parent one-outfit-container" style="display: none;">
