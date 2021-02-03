@@ -2,14 +2,15 @@ $(document).ready(function () {
   const outfitsBtn = $(".outfits-container");
   const oneOutfitContainer = $(".one-outfit-container");
   const outfitNamePlaceHolder = $(".outfit-name");
-  const outfitInfoPlaceHolder = $(".outfit-information");
+
 
   outfitsBtn.on("click", function () {
     const id = $(this).data("id");
     $.get("/outfits/" + id, (response) => {
       oneOutfitContainer.css("display", "block");
-      outfitNamePlaceHolder.text(response.name);
+      outfitNamePlaceHolder.text(`The Outfit you Choose: ${response.name}`);
       console.log(response);
+
       if (response.hat_id !== null) {
         displayGarment(response.hat_id);
       };
@@ -25,7 +26,7 @@ $(document).ready(function () {
       if (response.outer_id !== null) {
         displayGarment(response.outer_id);
       };
-      
+
     });
     console.log("Button clicked");
   });
@@ -48,7 +49,8 @@ $(document).ready(function () {
     console.log(response.name);
     let garmentType = response.type;
     $(`#${garmentType}-box`).empty();
-    let garmentInfo = $("<h3>").attr("data-id", `${response.id}`).text(response.name);
+    let garmentInfo = $(`<span data-id=${response.id}><strong>${response.type}:</strong> ${response.name}</span>`)
+    // const type = $(``);
     $(`#${garmentType}-box`).append(garmentInfo);
   }
 

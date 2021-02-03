@@ -1,53 +1,51 @@
 {{>nav-bar}}
-<main class="container">
-  <section class="column">
-    <h1 class="title is-1 has-text-centered">View your outfits</h1>
-  </section>
-  <div class="box garmentsContainer">
-    <div class="columns">
-      <div class="column">
-        <div class="notification is-$grey-light">
-          <h1 class="title is-2 has-text-centered strong has-text-weight-bold">
-            Outfits View
-          </h1>
-          <div class="tile is-ancestor">
-
-
-            <div class="tile is-vertical is-5 is-parent">
-              <div class="tile is-child box is-vertical">
-                <div class="tabs is-boxed">
-                  <ul>
-                    <li class="is-active"><a>All</a></li>
-                </div>
-                {{#each outfits}}
-                  {{> outfit-panel-block}}
-                {{/each}}
-              </div>
-            </div>
-            {{!-- edit outfits --}}
-            <div class="tile is-parent one-outfit-container" style="display: none;">
-              <div class="tile is-child box" id="">
-                <p class="title outfit-name">{{!-- outfits name goes here --}}</p>
-                <div class="tile is-child is-vertical">
-                  <div class="tile is-child box garment outfit-information">
-                    <div class="tile is-child box" id="Hats-box"></div>
-                    <div class="tile is-child box" id="Shirt-box"></div>
-                    <div class="tile is-child box" id="Pants-box"></div>
-                    <div class="tile is-child box" id="Shoes-box"></div>
-                    <div class="tile is-child box" id="Outerwear-box"></div>
-                    {{!-- outfits data goes here --}}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {{!-- end of the edit outfits container(tile) --}}
-
-
-
+<main class="container is-flex is-flex-direction-column is-justify-content-center" style="min-height: 80vh;">
+  <div class="columns">
+    <div class="column is-half">
+      <div class="tile is-parent">
+        <div class="tile is-child box is-vertical has-background-white outfits-container">
+          <div class="tabs is-centered">
+            <ul>
+              <li><strong>View Outfits</strong></li>
+            </ul>
           </div>
+          {{#each outfits}}
+          {{> outfit-panel-block}}
+          {{/each}}
         </div>
       </div>
     </div>
+
+
+    {{!-- edit outfits --}}
+
+    <div class="column is-half  one-outfit-container" style="">
+      <div class="tile is-parent">
+        <div class="tile is-child has-background-white outfits-container p-4">
+          <div class="tabs is-meduim is-centered">
+            <ul>
+              <li><strong class="outfit-name"></strong></li>
+            </ul>
+          </div>
+
+          <div class="panel-block outfit" id="Hats-box"></div>
+          <div class="panel-block outfit" id="Shirt-box"></div>
+          <div class="panel-block outfit" id="Pants-box"></div>
+          <div class="panel-block outfit" id="Shoes-box"></div>
+          <div class="panel-block outfit" id="Outerwear-box"></div>
+
+
+        </div>
+      </div>
+    </div>
+    {{!-- end of the edit outfits container(tile) --}}
+
+
+
+  </div>
+
+  </div>
+  </div>
 </main>
 
 <script src="/assets/js/view-outfits.js" async defer></script>

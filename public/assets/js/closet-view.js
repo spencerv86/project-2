@@ -59,7 +59,9 @@ $(document).ready(function () {
       console.log(response.name);
       let garmentType = response.type;
       $(`#${garmentType}-box`).empty();
-      let garmentInfo = $("<h3>").attr("data-id", `${id}`).text(response.name);
+      let garmentInfo = $("<h3>")
+        .attr("data-id", `${response.id}`)
+        .text(response.name);
       $(`#${garmentType}-box`).append(garmentInfo);
       // let savedItems = {"itemName":response.name, "itemID":response.id}
       localStorage.setItem(garmentType, JSON.stringify(response));
@@ -79,10 +81,10 @@ $(document).ready(function () {
       type: "DELETE",
     }).then(function () {
       console.log("Garment deleted");
-      if (currentSpot.id === id){
+      if (currentSpot.id === id) {
         localStorage.removeItem(type);
         location.reload();
-    };
+      }
       // Reload the page to get the updated list
       location.reload();
     });
