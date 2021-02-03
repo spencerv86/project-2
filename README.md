@@ -36,8 +36,8 @@ You can find Spencer on [GitHub](https://www.github.com/SpencerV86)
 You can reach me by email also at Coming Soon!
 You can find Andre on [GitHub](https://www.github.com/AndreDiop) 
 You can reach me by email also at itsjustandre@gmail.com 
-You can find Derrick on [GitHub](https://www.github.com/) 
-You can reach me by email also at Coming Soon!
+You can find Derrick on [GitHub](https://www.github.com/DerrickHardison) 
+You can reach me by email also at derrick@derrickhardison.com
 You can find us on [GitHub](https://www.github.com/) 
 You can reach me by email also at Coming Soon!
 
