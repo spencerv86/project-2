@@ -50,8 +50,8 @@ $(document).ready(function () {
       url: "/api/garments/" + id,
       method: "GET",
     }).then((response) => {
-      console.log(response[0]);
-      fillBox(response[0]);
+      console.log(response);
+      fillBox(response);
     });
 
     function fillBox(response) {
@@ -103,7 +103,7 @@ $(document).ready(function () {
     const newOutfit = {
       name: outfitName,
       hat_id: JSON.parse(localStorage.getItem("Hats")) ? JSON.parse(localStorage.getItem("Hats")).id : null,
-      shirt_id: JSON.parse(localStorage.getItem("Shirts")) ? JSON.parse(localStorage.getItem("Shirts")).id : null,
+      shirt_id: JSON.parse(localStorage.getItem("Shirt")) ? JSON.parse(localStorage.getItem("Shirt")).id : null,
       pant_id: JSON.parse(localStorage.getItem("Pants")) ? JSON.parse(localStorage.getItem("Pants")).id : null,
       shoe_id: JSON.parse(localStorage.getItem("Shoes")) ? JSON.parse(localStorage.getItem("Shoes")).id : null,
       outer_id: JSON.parse(localStorage.getItem("Outerwear")) ? JSON.parse(localStorage.getItem("Outerwear")).id : null
