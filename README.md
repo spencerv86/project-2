@@ -29,9 +29,15 @@ Alternatively, if you would like to inspect the code and install locally, please
 ## Usage
 To use the app, visit the [deployed site on Heroku](https://promethium.herokuapp.com/). Once you've arrived, you can click on the ```Add Garment``` button to begin adding to your closet. Make sure you fill out all of the required inputs and then save to your closet. 
 
+![Create screenshot](./public/assets/images/create-garment-screenshot.png)
+
 Once saved, all of your garments are accessible under the ```View Closet``` button.Here, you can see all garments that you've created and sort them by type (hat, shirt, outerwear, etc.). You can also use the buttons to the side of each garment listed to edit, delete or add to an outfit. The edit button will redirect you to a separate page but don't worry, your outfit in progress will be waiting for you when you return. 
 
+![View Closet Screenshot](./public/assets/images/view-closet-screenshot.png)
+
 Once you've chosen all of your individual garments, you can name and save your outfit and view it under the ```View Outfits``` button. This will take you to another page displaying all the outfits you've saved. Simply clicking on the desired outfit will then display all of the individual garments that you saved.
+
+![View Outfit Screenshot](./public/assets/images/view-outfit-screenshot.png)
 ## Contributing
 Please reach out to one of the collaborators via Github to propose any new changes.
           
