@@ -23,11 +23,11 @@ Promethium is an app that allows users to add garments in their closets for cata
 
 ## Installation
 
-If you would like to see the site in action, the deployed and functional site can be found on Heroku here: <https://secure-shelf-39463.herokuapp.com/>.
+If you would like to see the site in action, the deployed and functional site can be found on Heroku here: <https://promethium.herokuapp.com/>.
 
 Alternatively, if you would like to inspect the code and install locally, please begin by forking the repository and downloading to your own computer. You will need to run ```npm install``` but no other installations will be necessary. Create the database ```promethium_db``` in your mySQL server and edit the development password in your ```config.json``` file.
 ## Usage
-To use the app, visit the [deployed site on Heroku](https://secure-shelf-39463.herokuapp.com/). Once you've arrived, you can click on the ```Add Garment``` button to begin adding to your closet. Make sure you fill out all of the required inputs and then save to your closet. 
+To use the app, visit the [deployed site on Heroku](https://promethium.herokuapp.com/). Once you've arrived, you can click on the ```Add Garment``` button to begin adding to your closet. Make sure you fill out all of the required inputs and then save to your closet. 
 
 Once saved, all of your garments are accessible under the ```View Closet``` button.Here, you can see all garments that you've created and sort them by type (hat, shirt, outerwear, etc.). You can also use the buttons to the side of each garment listed to edit, delete or add to an outfit. The edit button will redirect you to a separate page but don't worry, your outfit in progress will be waiting for you when you return. 
 
