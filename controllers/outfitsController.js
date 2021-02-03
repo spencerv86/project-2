@@ -42,12 +42,13 @@ router.get("/outfits/:id/edit", (req, res) => {
 router.get("/outfits/:id", (req, res) => {
 
 
-  db.Outfit.findAll({
+  db.Outfit.findOne({
     where: { id: req.params.id },
   })
     .then((singleOutfit) => {
-      console.log(singleOutfit);
-      res.json(singleOutfit[0]);
+      // console.log(singleOutfit);
+      // console.log(db.Outfit.getShirt());
+      res.json(singleOutfit);
 
     })
     .catch((err) => {
@@ -59,16 +60,25 @@ router.get("/outfits/:id", (req, res) => {
  * API Route to create a new outfit.
  */
 router.post("/api/outfits", (req, res) => {
-  console.log(req.body);
-  res.send("Route to create a new outfit");
-  // db.Outfit.create(req.body)
-  //   .then((createdOutfit) => {
-  //     res.json(createdOutfit);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).end();
-  //   });
+
+  // had to check if the property of the object is emtpy in order to change it to null to able to store in the databe
+  db.Outfit.create(
+    {
+      name: req.body.name ? req.body.name : null,
+      hat_id: req.body.hat_id ? req.body.hat_id : null,
+      shirt_id: req.body.shirt_id ? req.body.shirt_id : null,
+      pant_id: req.body.pant_id ? req.body.pant_id : null,
+      shoe_id: req.body.shoe_id ? req.body.shoe_id : null,
+      outer_id: req.body.outer_id ? req.body.outer_id : null
+    }
+  )
+    .then(() => {
+      res.send("Outfit has been saved");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).end();
+    });
 });
 
 /**

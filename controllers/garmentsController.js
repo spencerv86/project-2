@@ -73,7 +73,7 @@ router.get("/garments/:id", (req, res) => {
 });
 
 router.get("/api/garments/:id", function (req, res) {
-  db.Garment.findAll({
+  db.Garment.findOne({
     where: {
       id: req.params.id,
     },
@@ -87,6 +87,7 @@ router.get("/api/garments/:id", function (req, res) {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
+
   db.Garment.create(req.body)
     .then((createdGarment) => {
       res.json(createdGarment);
