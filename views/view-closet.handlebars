@@ -45,23 +45,8 @@
             </ul>
           </div>
 
-
           {{#each garments}}
-          <a class="panel-block p-0" style="font-size: 14px;">
-            {{!-- will be a shirt partial --}}
-            <div class="column">{{name}}</div>
-            <div class="column">
-              <span class="panel-icon add-icon is-pulled-right">
-                <i class="fas fa-plus" aria-hidden="true" data-id="{{id}}" data-name="{{name}}"></i>
-              </span>
-              <span class="panel-icon is-pulled-right">
-                <i class="fas fa-trash-alt" aria-hidden="true" data-id="{{id}}"></i>
-              </span>
-              <span class="panel-icon is-pulled-right">
-                <i class="fas fa-user-edit" aria-hidden="true" data-id="{{id}}"></i>
-              </span>
-            </div>
-          </a>
+          {{> closet-panel-block}}
           {{/each}}
         </div>
       </article>
@@ -75,7 +60,7 @@
           <h1 class="has-text-centered" style="font-weight: bold;">New Outfits</h1>
           <div class="tile is-child is-vertical garment-tile"></div>
           <div class="panel-block" id="Hats-box"></div>
-          <div class="panel-block" id="Shirts-box"></div>
+          <div class="panel-block" id="Shirt-box"></div>
           <div class="panel-block" id="Pants-box"></div>
           <div class="panel-block" id="Shoes-box"></div>
           <div class="panel-block" id="Outerwear-box"></div>

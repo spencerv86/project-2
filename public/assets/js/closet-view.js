@@ -59,7 +59,9 @@ $(document).ready(function () {
       console.log(response.name);
       let garmentType = response.type;
       $(`#${garmentType}-box`).empty();
-      let garmentInfo = $(`<span data-id=${response.id}><strong>${response.type}:</strong> ${response.name}</span>`)
+      let garmentInfo = $("<h3>")
+        .attr("data-id", `${response.id}`)
+        .text(response.name);
       $(`#${garmentType}-box`).append(garmentInfo);
       // let savedItems = {"itemName":response.name, "itemID":response.id}
       localStorage.setItem(garmentType, JSON.stringify(response));
@@ -74,6 +76,7 @@ $(document).ready(function () {
     const id = $(this).data("id");
     const type = $(this).data("type");
     let currentSpot = JSON.parse(localStorage.getItem(type))
+    console.log(JSON.parse(localStorage.getItem(type)))
     $.ajax("/api/garments/" + id, {
       type: "DELETE",
     }).then(function () {
