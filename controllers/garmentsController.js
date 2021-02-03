@@ -54,24 +54,6 @@ router.get("/garments/:id/edit", (req, res) => {
     });
 });
 
-/**
- * Display information about a single garment
- */
-router.get("/garments/:id", (req, res) => {
-  res.send("Returns single garment");
-
-  //   db.Garment.findOne({
-  //     where: { id: req.params.id },
-  //   })
-  //     .then((singleGarment) => {
-  //       // console.log(singleGarment.dataValues);
-  //       res.render("single-garment", singleGarment.dataValues);
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).end();
-  //     });
-});
-
 router.get("/api/garments/:id", function (req, res) {
   db.Garment.findOne({
     where: {
@@ -87,7 +69,6 @@ router.get("/api/garments/:id", function (req, res) {
  * API Route to create a new garment.
  */
 router.post("/api/garments", (req, res) => {
-
   db.Garment.create(req.body)
     .then((createdGarment) => {
       res.json(createdGarment);
