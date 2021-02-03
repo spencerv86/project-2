@@ -36,20 +36,6 @@ app.use(garmentsController);
 app.use(outfitsController);
 app.use(closetsController);
 
-// app.use("/garments", garmentsController);
-// app.use("/closet", closetsController);
-// app.use("/outfits", outfitsController);
-
-// db.sequelize
-//   .sync()
-//   .then(() => {
-//     app.listen(PORT, () => {
-//       console.log(`Server is running on http://localhost:${PORT}`);
-//     });
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
 
 //db.sequelize.sync({ force: true }).then(() => {
 db.sequelize.sync().then(() => {

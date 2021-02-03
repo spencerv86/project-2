@@ -74,6 +74,7 @@ $(document).ready(function () {
     const id = $(this).data("id");
     const type = $(this).data("type");
     let currentSpot = JSON.parse(localStorage.getItem(type))
+    console.log(JSON.parse(localStorage.getItem(type)))
     $.ajax("/api/garments/" + id, {
       type: "DELETE",
     }).then(function () {
@@ -81,7 +82,7 @@ $(document).ready(function () {
       if (currentSpot.id === id){
         localStorage.removeItem(type);
         location.reload();
-    }
+    };
       // Reload the page to get the updated list
       location.reload();
     });
